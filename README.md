@@ -1,8 +1,8 @@
 # `@antitoxic/mac-openchrometab`
 
 - `npm` package which offers a single function called `openChromeTab`
-- when `openChromeTab` is called, it will open URL in `Google Chrome` (_or other
-  Chromium alternative_), reusing tab if present
+- `openChromeTab` opens a URL in `Google Chrome` (_or other Chromium
+  alternative_), reusing tab if present
 - if tab is not opened already, it will attempt to load the URL in a tab which
   is blank (`about:blank`) or create a new tab
 - if `Google Chrome` is not running, it will start it

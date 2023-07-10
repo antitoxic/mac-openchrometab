@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Anton Stoychev",
   "description": "Opens URL in chrome, reusing tab if present",
+  "repository": "github:antitoxic/mac-openchrometab",
   "main": "./lib/index.js",
   "scripts": {
     "start": "concurrently --names \"tsc,esbuild\" --prefix-colors \"blue,yellow\" \"pnpm start:node\" \"pnpm start:jxa\"",
