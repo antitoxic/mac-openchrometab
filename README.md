@@ -21,6 +21,8 @@ the usual `AppleScript` used for automating mac.
 import { openChromeTab } from '@antitoxic/mac-openchrometab';
 //...
 openChromeTab('http://localhost:8080');
+// or 
+openChromeTab('http://localhost:8080', 'Chromium');
 ```
 
 ## Use cases

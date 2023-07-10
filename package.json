@@ -1,10 +1,14 @@
 {
   "name": "@antitoxic/mac-openchrometab",
   "version": "1.0.0",
+  "license": "MIT",
   "author": "Anton Stoychev",
   "description": "Opens URL in chrome, reusing tab if present",
   "repository": "github:antitoxic/mac-openchrometab",
   "main": "./lib/index.js",
+  "os": [
+    "darwin"
+  ],
   "scripts": {
     "start": "concurrently --names \"tsc,esbuild\" --prefix-colors \"blue,yellow\" \"pnpm start:node\" \"pnpm start:jxa\"",
     "start:node": "pnpm build:node --watch --preserveWatchOutput",
@@ -13,9 +17,8 @@
     "build:node": "tsc --project ./tsconfig.node.build.json",
     "build:jxa": "find src/jxa -type f -exec pnpm esbuild:jxa {} + ;",
     "esbuild:jxa": "esbuild --target=node8 --bundle --outdir=lib/jxa",
-    "prepack": "npm build"
+    "prepack": "pnpm build"
   },
-  "license": "ISC",
   "devDependencies": {
     "@jxa/types": "^1.3.6",
     "@tsconfig/node18": "^18.2.0",

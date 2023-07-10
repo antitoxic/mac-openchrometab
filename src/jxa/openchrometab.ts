@@ -6,7 +6,7 @@ sys.includeStandardAdditions = true;
 
 const SystemEvents = Application('System Events');
 
-type CliArgs = [url: string, browserParams?: string];
+type CliArgs = [url: string, browserName?: string];
 /**
  * Assumes osascript -l JavaScript <this file name> "arg1" "arg2" ...
  */
@@ -24,7 +24,7 @@ const getArgs = () => {
   return argv as CliArgs;
 };
 
-const [url, browserParam] = getArgs();
+const [url, browserName] = getArgs();
 
 interface BrowserTab {
   url: (() => string) | string;
@@ -64,7 +64,7 @@ const bringWindowToFront = (app: BrowserApp, win: BrowserWindow) =>
   );
 
 const browser = Application<BrowserApp>(
-  browserParam ||
+  browserName ||
     (sys.systemAttribute('BROWSER') as string | null) ||
     'Google Chrome'
 );
