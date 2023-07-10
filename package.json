@@ -9,6 +9,10 @@
   "os": [
     "darwin"
   ],
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/antitoxic"
+  },
   "scripts": {
     "start": "concurrently --names \"tsc,esbuild\" --prefix-colors \"blue,yellow\" \"pnpm start:node\" \"pnpm start:jxa\"",
     "start:node": "pnpm build:node --watch --preserveWatchOutput",
