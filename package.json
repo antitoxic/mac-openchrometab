@@ -1,0 +1,26 @@
+{
+  "name": "@antitoxic/mac-openchrometab",
+  "version": "1.0.0",
+  "author": "Anton Stoychev",
+  "description": "Opens URL in chrome, reusing tab if present",
+  "main": "./lib/index.js",
+  "scripts": {
+    "start": "concurrently --names \"tsc,esbuild\" --prefix-colors \"blue,yellow\" \"pnpm start:node\" \"pnpm start:jxa\"",
+    "start:node": "pnpm build:node --watch --preserveWatchOutput",
+    "start:jxa": "find src/jxa -type f -exec pnpm esbuild:jxa --watch \"{}\" + ;",
+    "build": "concurrently --names \"tsc,esbuild\" --prefix-colors \"blue,yellow\" \"pnpm build:node\" \"pnpm build:jxa\"",
+    "build:node": "tsc --project ./tsconfig.node.build.json",
+    "build:jxa": "find src/jxa -type f -exec pnpm esbuild:jxa {} + ;",
+    "esbuild:jxa": "esbuild --target=node8 --bundle --outdir=lib/jxa",
+    "prepack": "npm build"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@jxa/types": "^1.3.6",
+    "@tsconfig/node18": "^18.2.0",
+    "@tsconfig/strictest": "^2.0.1",
+    "concurrently": "^8.2.0",
+    "esbuild": "^0.18.11",
+    "typescript": "^5.1.6"
+  }
+}

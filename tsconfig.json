@@ -1,0 +1,10 @@
+{
+  "extends": ["@tsconfig/strictest", "@tsconfig/node18"],
+  "compilerOptions": {
+    "outDir": "lib",
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": false,
+    "declaration": true
+  },
+  "include": ["./*.ts", "src/**/*"]
+}
