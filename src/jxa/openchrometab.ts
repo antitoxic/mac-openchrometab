@@ -11,7 +11,7 @@ type CliArgs = [url: string, browserName?: string];
  * Assumes osascript -l JavaScript <this file name> "arg1" "arg2" ...
  */
 const getArgs = () => {
-  // @ts-ignore
+  // @ts-expect-error Not types for $
   const args = $.NSProcessInfo.processInfo.arguments as {
     count: number;
     objectAtIndex: (i: number) => unknown;
